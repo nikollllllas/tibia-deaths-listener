@@ -138,6 +138,7 @@ Observações:
 - **Não** defina `PORT`: o Render injeta essa variável, e o servidor escuta em `0.0.0.0:$PORT`.
 - O pnpm é instalado explicitamente em vez de usar Corepack, porque o Corepack que vem em algumas versões do Node 22 falha ao verificar a assinatura das versões novas do pnpm (`Cannot find matching keyid`). Ao atualizar o pnpm, mude a versão em `package.json` (`packageManager`) e no `render.yaml`.
 - `NODE_ENV=production` esconde o campo `detail` nas respostas de erro e não afeta o build: o pnpm 12 continua instalando as `devDependencies`, que incluem o TypeScript.
+- O GuildStats fica atrás do Cloudflare, que responde 403 para os IPs do Render. Por isso, em produção, `GUILDSTATS_BASE_URL` aponta para um Cloudflare Worker (`worker/guildstats-proxy.js`) que repassa só `GET /include/character/tab.php` para o `guildstats.eu`. Para publicar: Cloudflare → Workers & Pages → Create Worker, cole o arquivo e faça o deploy.
 - O start usa `node dist/server.js` diretamente, sem depender do pnpm em runtime.
 
 Depois do deploy: `https://<seu-servico>.onrender.com/docs`.
