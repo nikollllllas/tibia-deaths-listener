@@ -8,7 +8,7 @@ const refs = (node: unknown): string[] =>
 
 describe('openApiSpec', () => {
   it('documents every route', () => {
-    expect(Object.keys(openApiSpec.paths).sort()).toEqual(['/deaths', '/health', '/record', '/stats'])
+    expect(Object.keys(openApiSpec.paths).sort()).toEqual(['/deaths', '/ferumbrinhas', '/health', '/record', '/stats'])
   })
 
   it('has only resolvable $refs', () => {

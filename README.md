@@ -1,4 +1,4 @@
-# chubiirou-tibia-api
+# tibia-deaths-listener
 
 REST API (Node.js + TypeScript + Express) com estatísticas de mortes do personagem **Chubiirou Marea**, calculadas em tempo real a partir do HTML do [GuildStats](https://guildstats.eu).
 

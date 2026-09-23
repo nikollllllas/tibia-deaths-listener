@@ -16,7 +16,7 @@ export async function getDeathsPage(page = 1): Promise<string> {
   try {
     res = await fetch(url, {
       signal: AbortSignal.timeout(config.guildStatsTimeoutMs),
-      headers: { 'User-Agent': 'chubiirou-tibia-api/1.0', Accept: 'text/html' },
+      headers: { 'User-Agent': 'tibia-deaths-listener/1.0', Accept: 'text/html' },
     })
   } catch (err) {
     throw new GuildStatsError(`Request to ${url} failed: ${(err as Error).message}`)

@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: chubiirou-tibia-api
+    name: tibia-deaths-listener
     runtime: node
     plan: free
     buildCommand: npm install -g pnpm@12.3.4 && pnpm install --frozen-lockfile && pnpm run build

@@ -4,6 +4,7 @@ import { config } from './config.js'
 import { GuildStatsError } from './guildstats/error.js'
 import { openApiSpec } from './openapi.js'
 import { deathsRouter } from './routes/deaths.js'
+import { ferumbrinhasRouter } from './routes/ferumbrinhas.js'
 import { healthRouter } from './routes/health.js'
 import { recordRouter } from './routes/record.js'
 import { statsRouter } from './routes/stats.js'
@@ -24,7 +25,7 @@ export function createApp() {
       res.set('Access-Control-Allow-Origin', '*')
       next()
     })
-    .use(healthRouter, statsRouter, deathsRouter, recordRouter)
+    .use(healthRouter, statsRouter, deathsRouter, recordRouter, ferumbrinhasRouter)
     .get('/openapi.json', (_req, res) => {
       res.json(openApiSpec)
     })

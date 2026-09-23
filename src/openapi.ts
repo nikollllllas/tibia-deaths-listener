@@ -156,6 +156,37 @@ export const openApiSpec = {
         },
       },
     },
+    '/ferumbrinhas': {
+      get: {
+        tags: ['StreamElements'],
+        summary: 'Frase pronta para o comando !ferumbrinhas',
+        description:
+          'Texto puro para usar com `$(customapi https://<host>/ferumbrinhas)` no StreamElements. ' +
+          'Em caso de falha, responde uma mensagem amigável em texto em vez de JSON, para não sujar o chat.',
+        operationId: 'getFerumbrinhas',
+        responses: {
+          '200': {
+            description: 'Frase com dias sem morrer, recorde e total de mortes.',
+            content: {
+              'text/plain': {
+                schema: { type: 'string' },
+                example:
+                  'Estamos caçando há 2 dias sem acidentes de trabalho. Nosso recorde atual é de 2 dias. No total de 10 mortes atualizadas pelo GuildStats.',
+              },
+            },
+          },
+          '502': {
+            description: 'GuildStats indisponível.',
+            content: {
+              'text/plain': {
+                schema: { type: 'string' },
+                example: 'Não consegui consultar o GuildStats agora, tenta de novo daqui a pouco.',
+              },
+            },
+          },
+        },
+      },
+    },
   },
   components: {
     schemas: {
