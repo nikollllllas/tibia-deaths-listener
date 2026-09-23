@@ -1,0 +1,30 @@
+{
+  "name": "chubiirou-tibia-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/server.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "express": "^5.1.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "@types/swagger-ui-express": "^4.1.8",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0"
+  },
+  "packageManager": "pnpm@12.3.4"
+}

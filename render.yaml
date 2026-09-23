@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: chubiirou-tibia-api
+    runtime: node
+    plan: free
+    buildCommand: npm install -g pnpm@12.3.4 && pnpm install --frozen-lockfile && pnpm run build
+    startCommand: node dist/server.js
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CHARACTER_NAME
+        value: Chubiirou Marea
+      - key: CUTOFF_DATE
+        value: 2026-09-14T16:51:00-03:00
+      - key: GUILDSTATS_BASE_URL
+        value: https://guildstats.eu
+      - key: TIMEZONE
+        value: America/Sao_Paulo
+      - key: GUILDSTATS_TIMEOUT_MS
+        value: "10000"

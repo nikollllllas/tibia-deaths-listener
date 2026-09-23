@@ -1,0 +1,384 @@
+<div>
+        <table class="w-full text-xs md:text-sm table-fixed md:table-auto">
+        <colgroup>
+            <col class="w-12 hidden md:table-column">
+            <col class="w-20 md:w-auto">
+            <col>
+            <col class="w-10 md:w-auto">
+            <col class="w-20 md:w-auto">
+        </colgroup>
+        <thead>
+            <tr class="text-gray-400 border-b border-gray-700 text-xs leading-tight">
+                <th class="py-2 px-1 md:px-3 text-center hidden md:table-cell">#</th>
+                <th class="py-2 px-1 md:px-3 text-left">When</th>
+                <th class="py-2 px-1 md:px-3 text-left">Killed by</th>
+                <th class="py-2 px-1 md:px-3 text-center">Lvl</th>
+                <th class="py-2 px-1 md:px-3 text-right md:whitespace-nowrap">
+                    <span class="relative cursor-help" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                        Exp lost                        <i class="fas fa-question-circle text-guild-green ml-1"></i>
+                        <div x-show="open" x-cloak class="absolute top-full right-0 mt-2 bg-[#0d141c] border border-gray-600 rounded-lg px-3 py-1.5 text-xs text-gray-300 shadow-xl z-50 pointer-events-none whitespace-nowrap">
+                            Approximate loss experience<br> counts with purchased all<br> blessings and promotion                            <div class="absolute bottom-full right-4 w-2 h-2 bg-[#0d141c] border-l border-t border-gray-600 rotate-45 mb-[-5px]"></div>
+                        </div>
+                    </span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">21</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">30-07-2026 21:49</span>
+                    <span class="md:hidden">30-07 21:49</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">undertaker</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">956</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-64,023,329</span><span class="md:hidden">-64M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">22</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">30-07-2026 18:43</span>
+                    <span class="md:hidden">30-07 18:43</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">nighthunter</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">956</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-64,023,329</span><span class="md:hidden">-64M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">23</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">28-07-2026 23:15</span>
+                    <span class="md:hidden">28-07 23:15</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">guardian of tales</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">956</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-64,023,329</span><span class="md:hidden">-64M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">24</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">27-07-2026 23:13</span>
+                    <span class="md:hidden">27-07 23:13</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">rage squid</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">956</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-64,023,329</span><span class="md:hidden">-64M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">25</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">27-07-2026 22:09</span>
+                    <span class="md:hidden">27-07 22:09</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">ice crawler</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">958</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-64,420,010</span><span class="md:hidden">-64.4M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">26</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">27-07-2026 20:41</span>
+                    <span class="md:hidden">27-07 20:41</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">sulphider</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">959</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-64,618,963</span><span class="md:hidden">-64.6M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">27</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">23-07-2026 20:33</span>
+                    <span class="md:hidden">23-07 20:33</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">rhindeer</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">956</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-64,023,329</span><span class="md:hidden">-64M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">28</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">15-07-2026 00:13</span>
+                    <span class="md:hidden">15-07 00:13</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">ice crawler</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">951</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-63,038,756</span><span class="md:hidden">-63M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">29</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">14-07-2026 23:05</span>
+                    <span class="md:hidden">14-07 23:05</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">oozing corpus</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">953</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-63,431,365</span><span class="md:hidden">-63.4M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">30</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">25-06-2026 17:59</span>
+                    <span class="md:hidden">25-06 17:59</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">harpy</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">936</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-60,145,684</span><span class="md:hidden">-60.1M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">31</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">24-04-2025 23:36</span>
+                    <span class="md:hidden">24-04-2025</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">mycobiontic beetle</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">901</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-53,742,227</span><span class="md:hidden">-53.7M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">32</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">24-04-2025 00:02</span>
+                    <span class="md:hidden">24-04-2025</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">bloated man-maggot</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">902</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-53,918,557</span><span class="md:hidden">-53.9M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">33</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">17-04-2025 23:31</span>
+                    <span class="md:hidden">17-04-2025</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">mycobiontic beetle</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">903</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-54,095,272</span><span class="md:hidden">-54.1M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">34</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">07-04-2025 22:54</span>
+                    <span class="md:hidden">07-04-2025</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">dreadful harvester</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">902</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-53,918,557</span><span class="md:hidden">-53.9M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">35</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">05-04-2025 00:00</span>
+                    <span class="md:hidden">05-04-2025</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">paladin&#039;s apparition</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">903</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-54,095,272</span><span class="md:hidden">-54.1M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">36</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">03-04-2025 23:36</span>
+                    <span class="md:hidden">03-04-2025</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">infernal demon</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">904</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-54,272,373</span><span class="md:hidden">-54.3M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">37</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">02-04-2025 23:41</span>
+                    <span class="md:hidden">02-04-2025</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">brachiodemon</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">906</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-54,627,733</span><span class="md:hidden">-54.6M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">38</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">26-03-2025 00:37</span>
+                    <span class="md:hidden">26-03-2025</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">knowledge elemental</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">905</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-54,449,860</span><span class="md:hidden">-54.4M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">39</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">14-03-2025 23:52</span>
+                    <span class="md:hidden">14-03-2025</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">knowledge elemental</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">902</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-53,918,557</span><span class="md:hidden">-53.9M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">40</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">13-03-2025 20:25</span>
+                    <span class="md:hidden">13-03-2025</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">mould phantom</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">903</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-54,095,272</span><span class="md:hidden">-54.1M</span>
+                                                                                    </td>
+            </tr>
+                    </tbody>
+    </table>
+</div>
+
+<div class="flex justify-center mt-4" x-data="deathPagination(5, 2)">
+    <div class="flex items-center gap-1">
+        <button @click="goToPage(currentPage - 1)" :disabled="currentPage <= 1"
+                :class="currentPage <= 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-gray-700 hover:text-white'"
+                class="px-2 py-1 text-gray-400 rounded transition text-sm">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <template x-for="p in visiblePages" :key="p">
+            <button @click="goToPage(p)"
+                    :class="p === currentPage ? 'bg-guild-green text-black' : 'text-gray-400 hover:bg-gray-700 hover:text-white'"
+                    class="w-8 h-8 rounded transition text-sm font-mono" x-text="p"></button>
+        </template>
+        <button @click="goToPage(currentPage + 1)" :disabled="currentPage >= totalPages"
+                :class="currentPage >= totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:bg-gray-700 hover:text-white'"
+                class="px-2 py-1 text-gray-400 rounded transition text-sm">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</div>
+<script>
+function deathPagination(total, current) {
+    return {
+        totalPages: total,
+        currentPage: current,
+        get visiblePages() {
+            var pages = [];
+            var start = Math.max(1, this.currentPage - 2);
+            var end = Math.min(this.totalPages, start + 4);
+            start = Math.max(1, end - 4);
+            for (var i = start; i <= end; i++) pages.push(i);
+            return pages;
+        },
+        async goToPage(p) {
+            if (p < 1 || p > this.totalPages || p === this.currentPage) return;
+            this.currentPage = p;
+            var wrapper = document.getElementById('death-table-wrapper');
+            if (!wrapper) return;
+            try {
+                var url = 'include/character/tab.php?nick=Chubiirou+Marea&tab=deaths&part=table&page=' + p;
+                var resp = await fetch(url);
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
+                wrapper.innerHTML = await resp.text();
+                wrapper.querySelectorAll('script').forEach(function(s) {
+                    var ns = document.createElement('script');
+                    ns.textContent = s.textContent;
+                    s.replaceWith(ns);
+                });
+            } catch(e) {
+                wrapper.innerHTML = '<div class="text-center py-8 text-red-400">Error loading page</div>';
+            }
+        }
+    };
+}
+</script>

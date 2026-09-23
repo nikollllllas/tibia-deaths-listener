@@ -1,0 +1,578 @@
+
+<div class="bg-[#0d141c] rounded-lg p-3 md:p-6 border border-gray-600">
+    <h2 class="text-xl font-bold text-white mb-4 flex flex-wrap items-center">
+        <i class="fas fa-skull-crossbones text-guild-green mr-3"></i>
+        Deaths        <span class="w-full lg:w-auto lg:ml-auto text-xs text-gray-500 font-normal mt-1 lg:mt-0">
+            <i class="fas fa-sync-alt mr-1"></i>
+            Update: 2026-09-23 07:53        </span>
+    </h2>
+
+    
+            <!-- Stats Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 mb-6">
+            <div class="bg-[#1a1f2e] rounded-lg p-3 md:p-4 border border-gray-700 text-center">
+                <div class="text-sm md:text-2xl font-bold text-white font-mono">83</div>
+                <div class="text-xs text-gray-400 mt-1">Number of death</div>
+            </div>
+            <div class="bg-[#1a1f2e] rounded-lg p-3 md:p-4 border border-gray-700 text-center">
+                <div class="text-sm md:text-2xl font-bold text-red-400 font-mono">4,143,865,913</div>
+                <div class="text-xs text-gray-400 mt-1">Experience lost</div>
+            </div>
+            <div class="bg-[#1a1f2e] rounded-lg p-3 md:p-4 border border-gray-700 text-center">
+                <div class="text-sm md:text-2xl font-bold text-amber-400 font-mono">1,053</div>
+                <div class="text-xs text-gray-400 mt-1">Level of character without dying</div>
+            </div>
+            <div class="bg-[#1a1f2e] rounded-lg p-3 md:p-4 border border-gray-700 text-center">
+                <div class="text-sm md:text-2xl font-bold text-purple-400 font-mono">4</div>
+                <div class="text-xs text-gray-400 mt-1">Killed by players</div>
+            </div>
+        </div>
+
+        <!-- Death Table (replaceable on pagination). Below md it breaks out of the card padding
+             (-mx-3 cancels p-3) so the killer names get a usable column. -->
+        <div id="death-table-wrapper" class="-mx-3 md:mx-0 overflow-x-auto">
+            <div>
+        <table class="w-full text-xs md:text-sm table-fixed md:table-auto">
+        <colgroup>
+            <col class="w-12 hidden md:table-column">
+            <col class="w-20 md:w-auto">
+            <col>
+            <col class="w-10 md:w-auto">
+            <col class="w-20 md:w-auto">
+        </colgroup>
+        <thead>
+            <tr class="text-gray-400 border-b border-gray-700 text-xs leading-tight">
+                <th class="py-2 px-1 md:px-3 text-center hidden md:table-cell">#</th>
+                <th class="py-2 px-1 md:px-3 text-left">When</th>
+                <th class="py-2 px-1 md:px-3 text-left">Killed by</th>
+                <th class="py-2 px-1 md:px-3 text-center">Lvl</th>
+                <th class="py-2 px-1 md:px-3 text-right md:whitespace-nowrap">
+                    <span class="relative cursor-help" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                        Exp lost                        <i class="fas fa-question-circle text-guild-green ml-1"></i>
+                        <div x-show="open" x-cloak class="absolute top-full right-0 mt-2 bg-[#0d141c] border border-gray-600 rounded-lg px-3 py-1.5 text-xs text-gray-300 shadow-xl z-50 pointer-events-none whitespace-nowrap">
+                            Approximate loss experience<br> counts with purchased all<br> blessings and promotion                            <div class="absolute bottom-full right-4 w-2 h-2 bg-[#0d141c] border-l border-t border-gray-600 rotate-45 mb-[-5px]"></div>
+                        </div>
+                    </span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">1</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">21-09-2026 12:42</span>
+                    <span class="md:hidden">21-09 12:42</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">dreadful harvester</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">973</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-67,447,454</span><span class="md:hidden">-67.4M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">2</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">20-09-2026 04:46</span>
+                    <span class="md:hidden">20-09 04:46</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">raubritter marksman</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">974</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-67,652,588</span><span class="md:hidden">-67.7M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">3</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">19-09-2026 16:26</span>
+                    <span class="md:hidden">19-09 16:26</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">raubritter skirmisher</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">975</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-67,858,136</span><span class="md:hidden">-67.9M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">4</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">18-09-2026 17:47</span>
+                    <span class="md:hidden">18-09 17:47</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <a href="/character/Chubiirou+Marea" class="text-guild-green hover:text-green-400 transition">Chubiirou Marea</a> <span class="text-gray-500 text-xs">975</span><span class="text-gray-500">, </span><a href="/bosses/Ichgahal" class="text-guild-green hover:text-green-400 transition">Ichgahal <i class="fas fa-dragon text-guild-green text-xs"></i></a>                                                                            <span class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <i class="fas fa-user text-red-400 text-xs ml-1"></i>
+                                <div x-show="open" x-cloak class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-[#0d141c] border border-gray-600 rounded-lg px-3 py-1.5 text-xs text-gray-300 shadow-xl z-50 pointer-events-none whitespace-nowrap">
+                                    PvP
+                                    <div class="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-[#0d141c] border-r border-b border-gray-600 rotate-45 mt-[-5px]"></div>
+                                </div>
+                            </span>
+                                            </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">975</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-67,858,136</span><span class="md:hidden">-67.9M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">5</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">16-09-2026 16:41</span>
+                    <span class="md:hidden">16-09 16:41</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">darklight construct</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">970</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-66,834,541</span><span class="md:hidden">-66.8M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">6</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">16-09-2026 13:52</span>
+                    <span class="md:hidden">16-09 13:52</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">hellspawn</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">972</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-67,242,735</span><span class="md:hidden">-67.2M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">7</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">16-09-2026 05:53</span>
+                    <span class="md:hidden">16-09 05:53</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <a href="/character/Chubiirou+Marea" class="text-guild-green hover:text-green-400 transition">Chubiirou Marea</a> <span class="text-gray-500 text-xs">973</span><span class="text-gray-500">, </span><span class="text-gray-300">parder</span>                                                                            <span class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <i class="fas fa-user text-red-400 text-xs ml-1"></i>
+                                <div x-show="open" x-cloak class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-[#0d141c] border border-gray-600 rounded-lg px-3 py-1.5 text-xs text-gray-300 shadow-xl z-50 pointer-events-none whitespace-nowrap">
+                                    PvP
+                                    <div class="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-[#0d141c] border-r border-b border-gray-600 rotate-45 mt-[-5px]"></div>
+                                </div>
+                            </span>
+                                            </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">973</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-67,447,454</span><span class="md:hidden">-67.4M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">8</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">15-09-2026 17:05</span>
+                    <span class="md:hidden">15-09 17:05</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">darklight source</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">974</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-67,652,588</span><span class="md:hidden">-67.7M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">9</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">15-09-2026 16:42</span>
+                    <span class="md:hidden">15-09 16:42</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">mycobiontic beetle</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">976</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-68,064,101</span><span class="md:hidden">-68.1M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">10</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">14-09-2026 16:51</span>
+                    <span class="md:hidden">14-09 16:51</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">energy</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">976</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-68,064,101</span><span class="md:hidden">-68.1M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">11</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">01-09-2026 01:56</span>
+                    <span class="md:hidden">01-09 01:56</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">enthralled dragon</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">965</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-65,821,288</span><span class="md:hidden">-65.8M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">12</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">28-08-2026 02:19</span>
+                    <span class="md:hidden">28-08 02:19</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <a href="/character/Chubiirou+Marea" class="text-guild-green hover:text-green-400 transition">Chubiirou Marea</a> <span class="text-gray-500 text-xs">963</span><span class="text-gray-500">, </span><span class="text-gray-300">elder bloodjaw</span>                                                                            <span class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <i class="fas fa-user text-red-400 text-xs ml-1"></i>
+                                <div x-show="open" x-cloak class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-[#0d141c] border border-gray-600 rounded-lg px-3 py-1.5 text-xs text-gray-300 shadow-xl z-50 pointer-events-none whitespace-nowrap">
+                                    PvP
+                                    <div class="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-[#0d141c] border-r border-b border-gray-600 rotate-45 mt-[-5px]"></div>
+                                </div>
+                            </span>
+                                            </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">963</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-65,418,871</span><span class="md:hidden">-65.4M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">13</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">11-08-2026 16:12</span>
+                    <span class="md:hidden">11-08 16:12</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">mycobiontic beetle</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">951</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-63,038,756</span><span class="md:hidden">-63M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">14</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">11-08-2026 15:59</span>
+                    <span class="md:hidden">11-08 15:59</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">oozing corpus</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">953</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-63,431,365</span><span class="md:hidden">-63.4M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">15</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">05-08-2026 02:31</span>
+                    <span class="md:hidden">05-08 02:31</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">crape man</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">950</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-62,843,060</span><span class="md:hidden">-62.8M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">16</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">03-08-2026 22:02</span>
+                    <span class="md:hidden">03-08 22:02</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">enthralled dragon</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">951</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-63,038,756</span><span class="md:hidden">-63M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">17</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">03-08-2026 20:56</span>
+                    <span class="md:hidden">03-08 20:56</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">sulphur spouter</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">952</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-63,234,857</span><span class="md:hidden">-63.2M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">18</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">03-08-2026 18:25</span>
+                    <span class="md:hidden">03-08 18:25</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">stalking stalk</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">953</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-63,431,365</span><span class="md:hidden">-63.4M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">19</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">03-08-2026 01:57</span>
+                    <span class="md:hidden">03-08 01:57</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">crape man</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">954</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-63,628,279</span><span class="md:hidden">-63.6M</span>
+                                                                                    </td>
+            </tr>
+                        <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                <td class="py-2 px-1 md:px-3 text-center text-gray-500 font-mono hidden md:table-cell">20</td>
+                <td class="py-2 px-1 md:px-3 text-gray-300 whitespace-nowrap">
+                    <span class="hidden md:inline">02-08-2026 02:17</span>
+                    <span class="md:hidden">02-08 02:17</span>
+                </td>
+                <td class="py-2 px-1 md:px-3 break-words">
+                                        <span x-data="{ more: false }">
+                        <span class="text-gray-300">rhindeer</span>                                                                    </span>
+                                    </td>
+                <td class="py-2 px-1 md:px-3 text-center text-white">955</td>
+                <td class="py-2 px-1 md:px-3 text-right font-mono whitespace-nowrap text-red-400">
+                                                                                                                        <span class="hidden md:inline">-63,825,600</span><span class="md:hidden">-63.8M</span>
+                                                                                    </td>
+            </tr>
+                    </tbody>
+    </table>
+</div>
+
+<div class="flex justify-center mt-4" x-data="deathPagination(5, 1)">
+    <div class="flex items-center gap-1">
+        <button @click="goToPage(currentPage - 1)" :disabled="currentPage <= 1"
+                :class="currentPage <= 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-gray-700 hover:text-white'"
+                class="px-2 py-1 text-gray-400 rounded transition text-sm">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <template x-for="p in visiblePages" :key="p">
+            <button @click="goToPage(p)"
+                    :class="p === currentPage ? 'bg-guild-green text-black' : 'text-gray-400 hover:bg-gray-700 hover:text-white'"
+                    class="w-8 h-8 rounded transition text-sm font-mono" x-text="p"></button>
+        </template>
+        <button @click="goToPage(currentPage + 1)" :disabled="currentPage >= totalPages"
+                :class="currentPage >= totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:bg-gray-700 hover:text-white'"
+                class="px-2 py-1 text-gray-400 rounded transition text-sm">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</div>
+<script>
+function deathPagination(total, current) {
+    return {
+        totalPages: total,
+        currentPage: current,
+        get visiblePages() {
+            var pages = [];
+            var start = Math.max(1, this.currentPage - 2);
+            var end = Math.min(this.totalPages, start + 4);
+            start = Math.max(1, end - 4);
+            for (var i = start; i <= end; i++) pages.push(i);
+            return pages;
+        },
+        async goToPage(p) {
+            if (p < 1 || p > this.totalPages || p === this.currentPage) return;
+            this.currentPage = p;
+            var wrapper = document.getElementById('death-table-wrapper');
+            if (!wrapper) return;
+            try {
+                var url = 'include/character/tab.php?nick=Chubiirou+Marea&tab=deaths&part=table&page=' + p;
+                var resp = await fetch(url);
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
+                wrapper.innerHTML = await resp.text();
+                wrapper.querySelectorAll('script').forEach(function(s) {
+                    var ns = document.createElement('script');
+                    ns.textContent = s.textContent;
+                    s.replaceWith(ns);
+                });
+            } catch(e) {
+                wrapper.innerHTML = '<div class="text-center py-8 text-red-400">Error loading page</div>';
+            }
+        }
+    };
+}
+</script>
+        </div>
+
+        <!-- Charts -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <div class="bg-[#1a1f2e] rounded-lg p-2 md:p-4 border border-gray-700">
+                <h3 class="text-sm font-semibold text-white mb-3 text-center">Killed by</h3>
+                <div class="relative" style="max-height: 280px;">
+                    <canvas id="deathKilledByChart"></canvas>
+                </div>
+            </div>
+            <div class="bg-[#1a1f2e] rounded-lg p-2 md:p-4 border border-gray-700">
+                <h3 class="text-sm font-semibold text-white mb-3 text-center">Experience lost</h3>
+                <div class="relative" style="max-height: 280px;">
+                    <canvas id="deathExpLostChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        (function() {
+            function loadScript(src) {
+                return new Promise(function(resolve, reject) {
+                    if (typeof Chart !== 'undefined') { resolve(); return; }
+                    var s = document.createElement('script');
+                    s.src = src;
+                    s.onload = resolve;
+                    s.onerror = reject;
+                    document.head.appendChild(s);
+                });
+            }
+
+            loadScript('https://cdn.jsdelivr.net/npm/chart.js').then(function() {
+                var killedByLabels = ["brain squid","crape man","mycobiontic beetle","Chubiirou Marea","rhindeer","rage squid","harpy","dreadful harvester","enthralled dragon","oozing corpus","Other"];
+                var killedByValues = [6,5,4,3,3,3,3,2,2,2,53];
+                var killedByColors = ["rgba(239, 68, 68, 0.8)","rgba(249, 115, 22, 0.8)","rgba(234, 179, 8, 0.8)","rgba(34, 197, 94, 0.8)","rgba(59, 130, 246, 0.8)","rgba(168, 85, 247, 0.8)","rgba(236, 72, 153, 0.8)","rgba(20, 184, 166, 0.8)","rgba(107, 114, 128, 0.8)","rgba(251, 146, 60, 0.8)","rgba(75, 85, 99, 0.8)"];
+
+                var ctxKilled = document.getElementById('deathKilledByChart');
+                if (ctxKilled) {
+                    new Chart(ctxKilled, {
+                        type: 'doughnut',
+                        data: {
+                            labels: killedByLabels,
+                            datasets: [{
+                                data: killedByValues,
+                                backgroundColor: killedByColors,
+                                borderColor: 'rgba(13, 20, 28, 0.8)',
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            cutout: '40%',
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        color: '#9ca3af',
+                                        font: { size: 10 },
+                                        padding: 8,
+                                        boxWidth: 12,
+                                        usePointStyle: true,
+                                        pointStyle: 'circle'
+                                    }
+                                },
+                                tooltip: {
+                                    backgroundColor: '#1a2332',
+                                    titleColor: '#fff',
+                                    bodyColor: '#9ca3af',
+                                    borderColor: '#374151',
+                                    borderWidth: 1,
+                                    callbacks: {
+                                        label: function(ctx) {
+                                            var total = ctx.dataset.data.reduce(function(a, b) { return a + b; }, 0);
+                                            var pct = ((ctx.raw / total) * 100).toFixed(1);
+                                            return ctx.label + ': ' + ctx.raw + ' (' + pct + '%)';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                var ctxExp = document.getElementById('deathExpLostChart');
+                if (ctxExp) {
+                    new Chart(ctxExp, {
+                        type: 'doughnut',
+                        data: {
+                            labels: [
+                                'Actual exp',
+                                'Lost by PvM',
+                                'Lost by PvP'
+                            ],
+                            datasets: [{
+                                data: [15258391200, 3899290103, 244575810],
+                                backgroundColor: [
+                                    'rgba(34, 197, 94, 0.8)',
+                                    'rgba(239, 68, 68, 0.8)',
+                                    'rgba(168, 85, 247, 0.8)'
+                                ],
+                                borderColor: 'rgba(13, 20, 28, 0.8)',
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        color: '#9ca3af',
+                                        font: { size: 10 },
+                                        padding: 8,
+                                        boxWidth: 12,
+                                        usePointStyle: true,
+                                        pointStyle: 'circle'
+                                    }
+                                },
+                                tooltip: {
+                                    backgroundColor: '#1a2332',
+                                    titleColor: '#fff',
+                                    bodyColor: '#9ca3af',
+                                    borderColor: '#374151',
+                                    borderWidth: 1,
+                                    callbacks: {
+                                        label: function(ctx) {
+                                            return ctx.label + ': ' + ctx.raw.toLocaleString();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+        })();
+        </script>
+            </div>
