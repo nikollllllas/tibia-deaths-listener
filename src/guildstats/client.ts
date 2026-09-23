@@ -26,6 +26,9 @@ export async function getDeathsPage(page = 1): Promise<string> {
   } catch (err) {
     throw new GuildStatsError(`Request to ${url} failed: ${(err as Error).message}`)
   }
-  if (!res.ok) throw new GuildStatsError(`GuildStats responded ${res.status} for ${url}`)
+  if (!res.ok) {
+    const body = (await res.text().catch(() => '')).replace(/\s+/g, ' ').slice(0, 300)
+    throw new GuildStatsError(`GuildStats responded ${res.status} for ${url}: ${body}`)
+  }
   return res.text()
 }
