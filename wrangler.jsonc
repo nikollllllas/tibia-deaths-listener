@@ -1,0 +1,16 @@
+{
+  "name": "tibia-deaths-listener",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "observability": { "enabled": true },
+  "vars": {
+    "NODE_ENV": "production",
+    "CHARACTER_NAME": "Chubiirou Marea",
+    "CUTOFF_DATE": "2026-09-14T16:51:00-03:00",
+    "GUILDSTATS_BASE_URL": "https://guildstats.eu",
+    "TIMEZONE": "America/Sao_Paulo",
+    "GUILDSTATS_TIMEOUT_MS": "10000"
+  }
+}
