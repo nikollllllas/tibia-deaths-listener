@@ -8,7 +8,7 @@
   "vars": {
     "NODE_ENV": "production",
     "CHARACTER_NAME": "Chubiirou Marea",
-    "CUTOFF_DATE": "2026-09-14T16:51:00-03:00",
+    "CUTOFF_DATE": "2026-09-14T11:51:00-03:00",
     "GUILDSTATS_BASE_URL": "https://guildstats.eu",
     "TIMEZONE": "America/Sao_Paulo",
     "GUILDSTATS_TIMEOUT_MS": "10000"

@@ -24,7 +24,7 @@ const ongoingRecordExample = {
   from: '2026-09-21T12:42:00-03:00', to: null, ongoing: true,
 }
 const emptyRecordExample = { days: null, hours: null, minutes: null, from: null, to: null, ongoing: false }
-const cutoff = '2026-09-14T16:51:00-03:00'
+const cutoff = '2026-09-14T11:51:00-03:00'
 
 const json = (schema: object, examples: Record<string, { summary: string; value: unknown }>) => ({
   'application/json': { schema, examples },
@@ -166,12 +166,12 @@ export const openApiSpec = {
         operationId: 'getFerumbrinhas',
         responses: {
           '200': {
-            description: 'Frase com dias sem morrer, recorde e total de mortes.',
+            description: 'Frase com dias sem morrer, última morte (se houver), recorde e total de mortes.',
             content: {
               'text/plain': {
                 schema: { type: 'string' },
                 example:
-                  'Estamos caçando há 2 dias sem acidentes de trabalho. Nosso recorde atual é de 2 dias. No total de 10 mortes atualizadas pelo GuildStats.',
+                  'Estamos caçando há 2 dias sem acidentes de trabalho. A última morte foi em 21/09, às 12:42, para dreadful harvester. Nosso recorde atual é de 2 dias. No total de 10 mortes atualizadas pelo GuildStats.',
               },
             },
           },

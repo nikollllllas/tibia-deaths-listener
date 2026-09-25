@@ -16,7 +16,8 @@ Route → services/deaths.ts (paginação + cutoff) → guildstats/client.ts (HT
 - Páginas N ≥ 2: `...&tab=deaths&part=table&page=N`
 - O total de páginas vem do widget `deathPagination(<total>, <atual>)` no próprio HTML.
 - As páginas vão da morte mais recente para a mais antiga. A coleta para assim que uma página contém uma morte **anterior** ao cutoff (usa a menor data da página, não a última linha). Uma página vazia antes do fim gera erro 502 em vez de truncar os dados em silêncio. Mortes duplicadas (linhas que “escorregam” de página quando entra uma morte nova durante a coleta) são removidas.
-- As datas `DD-MM-YYYY HH:mm` são interpretadas no fuso `TIMEZONE` (padrão `America/Sao_Paulo`) e devolvidas em ISO 8601 com offset (`2026-09-21T12:42:00-03:00`).
+- O GuildStats só atualiza as mortes uma vez por dia. As mortes mais recentes vêm do tibia.com via [TibiaData](https://api.tibiadata.com) (`/v4/character/<nome>`, cache de 5 min) e são mescladas com as do GuildStats (mesmo minuto + nível = mesma morte). Se a TibiaData falhar, a API segue só com o GuildStats.
+- As datas `DD-MM-YYYY HH:mm` são interpretadas no fuso `GUILDSTATS_TIMEZONE` (padrão `Europe/Berlin`, o fuso do tibia.com) e devolvidas no fuso `TIMEZONE` em ISO 8601 com offset (`2026-09-21T12:42:00-03:00`).
 
 ## Regras
 
@@ -41,7 +42,7 @@ Não acessa o GuildStats. Serve para o cron-job.org manter o serviço acordado.
 ```json
 {
   "character": "Chubiirou Marea",
-  "cutoff": "2026-09-14T16:51:00-03:00",
+  "cutoff": "2026-09-14T11:51:00-03:00",
   "totalDeaths": 10,
   "lastDeath": { "date": "2026-09-21T12:42:00-03:00", "level": 973, "killer": "dreadful harvester", "killers": ["dreadful harvester"], "pvp": false },
   "daysWithoutDeath": 2,
@@ -56,7 +57,7 @@ Mortes do período, da mais recente para a mais antiga (útil para debug).
 ```json
 {
   "character": "Chubiirou Marea",
-  "cutoff": "2026-09-14T16:51:00-03:00",
+  "cutoff": "2026-09-14T11:51:00-03:00",
   "total": 10,
   "deaths": [
     { "date": "2026-09-21T12:42:00-03:00", "level": 973, "killer": "dreadful harvester", "killers": ["dreadful harvester"], "pvp": false }
@@ -92,9 +93,10 @@ Copie `.env.example` para `.env`. O arquivo é carregado com `process.loadEnvFil
 |---|---|---|
 | `PORT` | `3000` | Porta HTTP (o Render define a sua) |
 | `CHARACTER_NAME` | `Chubiirou Marea` | Personagem consultado |
-| `CUTOFF_DATE` | `2026-09-14T16:51:00-03:00` | Início do período (inclusivo), em ISO 8601 |
+| `CUTOFF_DATE` | `2026-09-14T11:51:00-03:00` | Início do período (inclusivo), em ISO 8601 |
 | `GUILDSTATS_BASE_URL` | `https://guildstats.eu` | Base das URLs do GuildStats |
-| `TIMEZONE` | `America/Sao_Paulo` | Fuso usado para interpretar e formatar as datas |
+| `TIMEZONE` | `America/Sao_Paulo` | Fuso usado para formatar as datas |
+| `GUILDSTATS_TIMEZONE` | `Europe/Berlin` | Fuso em que o GuildStats exibe as datas (CET/CEST) |
 | `GUILDSTATS_TIMEOUT_MS` | `10000` | Timeout de cada requisição ao GuildStats |
 
 Variáveis vazias usam o valor padrão.
